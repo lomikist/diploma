@@ -1,24 +1,32 @@
-QT       += core gui
-
+QT += core gui
+QT += gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 CONFIG += c++11
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+# Ensure that MOC processing is done correctly
+CONFIG += moc
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+# Automatically include all .cpp files from src and its subdirectories
+SOURCES += $$files($$PWD/src/*.cpp) \
+           $$files($$PWD/src/controller/*.cpp) \
+           $$files($$PWD/src/model/*.cpp) \
+           $$files($$PWD/src/view/*.cpp)
 
-HEADERS += \
-    mainwindow.hpp
+# Automatically include all .hpp files from inc and its subdirectories
+HEADERS += $$files($$PWD/inc/*.hpp) \
+           $$files($$PWD/inc/controller/*.hpp) \
+           $$files($$PWD/inc/model/*.hpp) \
+           $$files($$PWD/inc/view/*.hpp)
 
-FORMS += \
-    mainwindow.ui
+# Automatically include all .ui files from the form directory
+FORMS += $$files($$PWD/form/*.ui)
 
-# Default rules for deployment.
+# Include paths for headers
+INCLUDEPATH += inc
+
+# Default rules for deployment
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
