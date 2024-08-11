@@ -1,6 +1,5 @@
 #ifndef BOARD_HPP
 #define BOARD_HPP
-
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QObject>
@@ -19,7 +18,7 @@ public slots:
     void add_rect();
 
 public:
-    Board(QGraphicsView *view, QGraphicsScene *scene, QObject *parent = nullptr);
+    Board(QGraphicsView *view, QObject *parent = nullptr);
     ~Board();
     void set_width(int width);
     void set_height(int height);

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "qabstractgraphicsshapeitem": "cpp",
+        "qpainter": "cpp"
+    }
+}

@@ -1,11 +1,19 @@
 #include "../inc/board.hpp"
 #include <iostream>
 #include<QDebug>
+#include "board.hpp"
 
-Board::Board(QGraphicsView *view, QGraphicsScene *scene, QObject *parent)
-    : QObject(parent), _scene(scene), _view(view)
+Board::Board(QGraphicsView *view, QObject *parent) :
+        QObject(parent),
+        _view(view)
 {
+    _scene = new QGraphicsScene(view->parent());//TODO check for what is need a paren.
     _view->setScene(_scene);
+    _view->setFixedSize(900, 600);
+    _view->setSceneRect(0, 0, 900, 600);
+
+    set_opbects();
+    
 }
 
 Board::~Board() {}
@@ -52,15 +60,6 @@ void Board::add_rect()
     QPen outlinePen(Qt::black);
     _x += _curr_width;
     _y += _curr_height;
-
-    for (auto&& i = _scene->items().begin(); i != _scene->items().end(); ++i)
-        qInfo() << i;
-
-    // for (auto &&i : _scene->items())
-    // {
-    //     qInfo() << *i;
-    // }
-    
 
     _scene->addRect(_x, _y, _curr_width, _curr_height, outlinePen, blueBrush);
 }
