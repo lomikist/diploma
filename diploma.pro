@@ -1,8 +1,8 @@
+# Include necessary Qt modules
 QT += core gui
-QT += gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-
+# Use C++11 standard
 CONFIG += c++11
 
 # Ensure that MOC processing is done correctly
@@ -23,10 +23,13 @@ HEADERS += $$files($$PWD/inc/*.hpp) \
 # Automatically include all .ui files from the form directory
 FORMS += $$files($$PWD/form/*.ui)
 
-# Include paths for headers
-INCLUDEPATH += inc
+# Add the 'inc' directory to the include path for headers
+INCLUDEPATH +=  inc \
+                inc/controller \
+                inc/model \
+                inc/view
 
-# Default rules for deployment
+# Installation paths (optional, depending on your deployment needs)
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target

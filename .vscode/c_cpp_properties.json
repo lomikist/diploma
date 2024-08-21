@@ -1,19 +1,42 @@
 {
     "configurations": [
         {
-            "name": "WSL",
+            "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/usr/include/x86_64-linux-gnu/qt6",
-                "/usr/include/x86_64-linux-gnu/qt6/QtWidgets",
-                "/usr/include/x86_64-linux-gnu/qt6/QtCore",
-                "/usr/include/x86_64-linux-gnu/qt6/QtGui"
+                "${workspaceFolder}/inc",                           // Project headers
+                "${workspaceFolder}/inc/controller",                // Controller headers
+                "${workspaceFolder}/inc/model",                     // Model headers
+                "${workspaceFolder}/inc/view",                      // View headers
+                "${workspaceFolder}/build",                         // Include build directory (if ui_mainform.h is there)
+                "${workspaceFolder}/debug",                         // Include build directory (if ui_mainform.h is there)
+                "/home/weasel/Qt/6.7.2/gcc_64/include",             // Qt include directory
+                "/home/weasel/Qt/6.7.2/gcc_64/include/QtWidgets",   // Qt Widgets module
+                "/home/weasel/Qt/6.7.2/gcc_64/include/QtCore",      // Qt Core module
+                "/home/weasel/Qt/6.7.2/gcc_64/include/QtGui"        // Qt GUI module
             ],
-            "defines": [],
+            "defines": [
+                "QT_CORE_LIB",
+                "QT_GUI_LIB",
+                "QT_WIDGETS_LIB",
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/inc",
+                    "${workspaceFolder}/src",
+                    "${workspaceFolder}/build",                     // Ensure this is where ui_mainform.h is generated
+                    "/home/weasel/Qt/6.7.2/gcc_64/include",
+                    "/usr/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
         }
     ],
     "version": 4

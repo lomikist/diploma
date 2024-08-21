@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "qabstractgraphicsshapeitem": "cpp",
-        "qpainter": "cpp"
+        "qpainter": "cpp",
+        "qgraphicstextitem": "cpp",
+        "qgraphicsview": "cpp",
+        "qgraphicsscene": "cpp",
+        "qpushbutton": "cpp"
     }
-}
+} 

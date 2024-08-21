@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MainForm</class>
+ <widget class="QMainWindow" name="MainForm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1304</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,43 +17,51 @@
    <widget class="QGraphicsView" name="board_view">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>0</y>
-      <width>430</width>
-      <height>550</height>
+      <x>320</x>
+      <y>20</y>
+      <width>971</width>
+      <height>541</height>
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>320</width>
-      <height>334</height>
+      <x>9</x>
+      <y>20</y>
+      <width>291</width>
+      <height>141</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QPushButton" name="add_rect">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>100</height>
-        </size>
-       </property>
        <property name="text">
-        <string>add_rect</string>
+        <string>PushButton</string>
        </property>
       </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QSpinBox" name="x_spin_box"/>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="rect_x"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="rect_h"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QSpinBox" name="y_spin_box"/>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLineEdit" name="rect_y"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="rect_w"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -65,8 +73,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>20</height>
+     <width>1304</width>
+     <height>27</height>
     </rect>
    </property>
   </widget>
