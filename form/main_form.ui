@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGraphicsView" name="board_view">
     <property name="geometry">
@@ -22,6 +25,9 @@
       <width>971</width>
       <height>541</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget_3">
@@ -36,6 +42,10 @@
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QPushButton" name="add_rect">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -46,20 +56,36 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLineEdit" name="rect_x"/>
+          <widget class="QLineEdit" name="rect_x">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="rect_h"/>
+          <widget class="QLineEdit" name="rect_h">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLineEdit" name="rect_y"/>
+          <widget class="QLineEdit" name="rect_y">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="rect_w"/>
+          <widget class="QLineEdit" name="rect_w">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

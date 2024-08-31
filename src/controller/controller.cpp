@@ -1,6 +1,5 @@
-#include <QLoggingCategory>
-#include <tuple>
 #include "controller.hpp"
+#include "QLittleEndianStorageType"
 
 Controller::Controller(Model *model, MyView *view)
 {
@@ -18,9 +17,11 @@ void Controller::handleAddShape(const std::tuple<int, int, int, int> &rect_inf)
                      std::get<3>(rect_inf)
                      );
     _view->display_shapes(_model->get_shapes());
-
 }
 
+void Controller::update(){
+
+}
 Controller::~Controller()
 {
 }

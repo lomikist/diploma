@@ -1,5 +1,6 @@
-#include "controller.hpp"
 #include <QApplication>
+#include "controller.hpp"
+#include "model/model.hpp"
 
 int main(int argc, char *argv[])
 {

@@ -2,8 +2,8 @@
 QT += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-# Use C++11 standard
-CONFIG += c++11
+# Use C++17 standard
+CONFIG += c++17
 
 # Ensure that MOC processing is done correctly
 CONFIG += moc
@@ -18,16 +18,20 @@ SOURCES += $$files($$PWD/src/*.cpp) \
 HEADERS += $$files($$PWD/inc/*.hpp) \
            $$files($$PWD/inc/controller/*.hpp) \
            $$files($$PWD/inc/model/*.hpp) \
-           $$files($$PWD/inc/view/*.hpp)
+           $$files($$PWD/inc/view/*.hpp) \
+           $$files($$PWD/inc/observer/*.hpp)
 
 # Automatically include all .ui files from the form directory
-FORMS += $$files($$PWD/form/*.ui)
+FORMS   += $$files($$PWD/form/*.ui)
 
 # Add the 'inc' directory to the include path for headers
 INCLUDEPATH +=  inc \
                 inc/controller \
                 inc/model \
-                inc/view
+                inc/view \
+                inc/observer \
+                build \
+                debug
 
 # Installation paths (optional, depending on your deployment needs)
 qnx: target.path = /tmp/$${TARGET}/bin

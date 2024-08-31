@@ -1,0 +1,18 @@
+CompileFlags:
+  Add: 
+[
+  -std=c++17,
+  -I/home/weasel/Qt/6.7.2/gcc_64/include,
+  -I/home/weasel/Qt/6.7.2/gcc_64/include/QtWidgets,
+  -I/home/weasel/Qt/6.7.2/gcc_64/include/QtCore,
+  -I/home/weasel/Qt/6.7.2/gcc_64/include/QtGui,
+  -I${workspaceFolder}/inc,
+  -I${workspaceFolder}/inc/controller,
+  -I${workspaceFolder}/inc/model,
+  -I${workspaceFolder}/inc/view,
+  -I${workspaceFolder}/inc/observer,
+  -I${workspaceFolder}/build,
+  -I${workspaceFolder}/debug
+]
+
+
