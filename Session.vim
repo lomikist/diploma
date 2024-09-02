@@ -14,16 +14,19 @@ else
   set shortmess=aoO
 endif
 badd +16 inc/view/view.hpp
-badd +27 inc/model/model.hpp
-badd +13 inc/observer/subject.hpp
-badd +18 inc/controller/controller.hpp
-badd +30 src/model/model.cpp
-badd +83 src/view/view.cpp
-badd +23 src/controller/controller.cpp
+badd +18 inc/model/model.hpp
+badd +1 inc/observer/subject.hpp
+badd +20 inc/controller/controller.hpp
+badd +13 src/model/model.cpp
+badd +43 src/view/view.cpp
+badd +35 src/controller/controller.cpp
+badd +2 inc/observer/observer.hpp
+badd +10 src/main.cpp
+badd +8 inc/model/rect.hpp
 argglobal
 %argdel
 $argadd NvimTree_1
-edit src/view/view.cpp
+edit inc/model/rect.hpp
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -37,7 +40,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt src/controller/controller.cpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -48,11 +50,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 8 - ((7 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 8
 normal! 0
 lcd ~/Desktop/repos/diploma
 tabnext 1
@@ -70,6 +72,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

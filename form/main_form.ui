@@ -17,7 +17,7 @@
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="board_view">
+   <widget class="QGraphicsView" name="_board_view">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -41,7 +41,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
-      <widget class="QPushButton" name="add_rect">
+      <widget class="QPushButton" name="_add_rect">
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
@@ -56,14 +56,14 @@ color: rgb(0, 0, 0);</string>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLineEdit" name="rect_x">
+          <widget class="QLineEdit" name="_rect_x">
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="rect_h">
+          <widget class="QLineEdit" name="_rect_h">
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
@@ -74,14 +74,14 @@ color: rgb(0, 0, 0);</string>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLineEdit" name="rect_y">
+          <widget class="QLineEdit" name="_rect_y">
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="rect_w">
+          <widget class="QLineEdit" name="_rect_w">
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>

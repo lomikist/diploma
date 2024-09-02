@@ -50,23 +50,3 @@ void MyGraphicsView::zoomOut(QPointF scenePos) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
