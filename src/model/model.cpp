@@ -1,10 +1,10 @@
 #include "model.hpp"
+#include "circle.hpp"
 #include "observer.hpp"
 #include "qlogging.h"
 #include <cstddef>
 #include <memory>
 #include <vector>
-#include <algorithm>
 
 Model::Model()
 {
@@ -40,29 +40,29 @@ void Model::add_rect(int x, int y, int w, int h)
     notifyObservers();
 }
 
+void Model::add_circle(int x, int y, int h)
+{
+    _shapes.push_back(std::make_shared<Circle>(x, y, h));
+    notifyObservers();
+}
+
 void Model::move_rect(size_t index, int x, int y)
 { 
 }
 
-std::vector<std::shared_ptr<Rect>>& Model::get_shapes()
+std::vector<std::shared_ptr<QGraphicsItem>>& Model::get_shapes()
 {
     return _shapes;
 }
 
-void Model::addObserver(std::weak_ptr<Observer> observer)
+void Model::addObserver(const std::shared_ptr<Observer>& observer)
 {
-    _observers.push_back(std::move(observer));
+    std::weak_ptr<Observer> wp = observer;
+    _observers.push_back(std::move(wp));
 }
 
 void Model::removeObserver(Observer* observer)
 {
-    /*_observers.erase(
-        std::remove_if(
-            _observers.begin(), _observers.end(),
-            [observer](const Observer& elem){return true;}
-        ),
-        _observers.end()
-    );*/
 }
 
 void Model::notifyObservers()

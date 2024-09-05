@@ -13,16 +13,11 @@ public:
     Rect(Rect&& other);
     Rect& operator=(const Rect& other);
     Rect& operator=(Rect&& other);
-    virtual ~Rect() = default;
+    ~Rect() override;
       
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
-    
-    friend QDebug operator<<(QDebug debug, const Rect &rect) {
-        QDebugStateSaver saver(debug);
-        return debug;
-    }
 };
 
 #endif

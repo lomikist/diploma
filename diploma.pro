@@ -4,6 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 # Use C++17 standard
 CONFIG += c++17
+CONFIG += debug
 
 # Ensure that MOC processing is done correctly
 CONFIG += moc

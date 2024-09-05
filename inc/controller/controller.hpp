@@ -19,7 +19,8 @@ public:
     void start();
     void start_connect();
 private slots:
-    void handleAddShape(const std::tuple<int, int, int, int> &rect_inf);
+    void handleCircleAdd(const std::tuple<int, int, int> &rect_inf);
+    void handleRectAdd(const std::tuple<int, int, int, int> &rect_inf);
 };
 
 #endif // CONTROLLER_HPP

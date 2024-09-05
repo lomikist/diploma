@@ -1,7 +1,6 @@
 #ifndef VIEW_HPP
 #define VIEW_HPP
 
-#include "rect.hpp"
 #include "ui_main_form.h"
 #include <QMainWindow>
 #include <cstddef>
@@ -18,9 +17,10 @@ public:
     MyView(const MyView&) = delete;
     MyView& operator=(const MyView&) = delete;
     ~MyView();
-    void display_shapes(std::vector<std::shared_ptr<Rect>> &, size_t index = 0);
+    void display_shapes(std::vector<std::shared_ptr<QGraphicsItem>> &, size_t index = 0);
 signals:
-    void addShapeRequested(const std::tuple<int, int, int, int> &shape);
+    void addRect(const std::tuple<int, int, int, int> &shape);
+    void addCircle(const std::tuple<int, int, int> &shape);
 
 private:
     void drawGrid(qreal gridSize);

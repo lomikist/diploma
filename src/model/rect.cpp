@@ -1,5 +1,6 @@
 #include "rect.hpp"
 #include "qgraphicsitem.h"
+#include "qlogging.h"
 #include "qnamespace.h"
 #include <utility>
 
@@ -38,6 +39,11 @@ void Rect::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
     painter->setBrush(QBrush(Qt::blue));
     painter->drawRect(rect());
+}
+
+Rect::~Rect()
+{
+    qInfo("rect destructur");
 }
 
 QRectF Rect::boundingRect() const 
