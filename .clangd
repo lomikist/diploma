@@ -1,6 +1,5 @@
 CompileFlags:
   Add: 
-[
   -std=c++17,
   -I/home/weasel/Qt/6.7.2/gcc_64/include,
   -I/home/weasel/Qt/6.7.2/gcc_64/include/QtWidgets,
@@ -13,6 +12,3 @@ CompileFlags:
   -I${workspaceFolder}/inc/observer,
   -I${workspaceFolder}/build,
   -I${workspaceFolder}/debug
-]
-
-

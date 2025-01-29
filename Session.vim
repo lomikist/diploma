@@ -13,23 +13,25 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +18 inc/view/view.hpp
-badd +90 src/view/view.cpp
-badd +13 inc/model/model.hpp
-badd +25 ~/Desktop/repos/diploma/inc/model/rect.hpp
-badd +1665 /usr/include/c++/13/bits/shared_ptr_base.h
-badd +23 inc/controller/controller.hpp
-badd +37 src/model/model.cpp
-badd +27 src/controller/controller.cpp
-badd +1 src/main.cpp
-badd +1 ~/Desktop/repos/diploma/inc/model/circle.hpp
-badd +36 ~/Desktop/repos/diploma/src/model/circle.cpp
-badd +1 ~/Desktop/repos/diploma/src/model/rect.cpp
+badd +21 ~/Desktop/repos/diploma/inc/controller/controller.hpp
+badd +0 ~/Desktop/repos/diploma/src/view/view.cpp
 argglobal
 %argdel
-edit src/main.cpp
+edit ~/Desktop/repos/diploma/src/view/view.cpp
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt src/controller/controller.cpp
+balt ~/Desktop/repos/diploma/inc/controller/controller.hpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -37,14 +39,14 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 18) / 36)
+let s:l = 92 - ((3 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
+keepjumps 92
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -53,13 +55,14 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
