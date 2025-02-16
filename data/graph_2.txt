@@ -1,0 +1,10 @@
+A B 25
+A C 48
+A D 29
+A E 43
+B C 47
+B D 13
+B E 18
+C D 24
+C E 28
+D E 18
