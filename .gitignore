@@ -9,6 +9,7 @@ debug/
 *.moc
 *.o
 *.obj
+*.clangd
 *.orig
 *.rej
 *.so
