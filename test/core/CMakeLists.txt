@@ -1,9 +1,11 @@
-add_executable(test_parser
-  test_parser.cpp
-  ../../src/parser/parser.cpp
+add_executable(test_core
+  test_core.cpp
+  ../../src/model/cell.cpp
+  ../../src/model/chromosome.cpp
+  ../../src/core/fitness/fitness_manhattan.cpp 
 )
 
-target_include_directories(test_parser PRIVATE ../../inc)
+target_include_directories(test_core PRIVATE ../../inc)
 
-add_test(NAME ParserTests COMMAND test_parser)
+add_test(NAME CoreTests COMMAND test_core)
 

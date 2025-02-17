@@ -7,10 +7,14 @@ namespace model
 class Cell
 {
 public:
-    Cell(std::string name, int width, int height, int x, int y);
-    void setPosition(int x, int y); 
-    std::pair<int,int> getPosition() const;
-    std::pair<int,int> getSize() const;
+    Cell(const std::string& name, int width, int height, int x, int y);
+    void set_position(int x, int y); 
+    std::pair<int,int> get_position() const;
+    std::pair<int,int> get_size() const;
+    const std::string& get_name() const;
+    bool operator==(const Cell& rhs) const;
+
+////////////////////////
     void print() const;
 private:
     std::string m_name;

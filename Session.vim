@@ -13,29 +13,37 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +21 ~/Desktop/repos/diploma/inc/controller/controller.hpp
 badd +1 ~/Desktop/repos/diploma/src/view/view.cpp
 badd +9 ~/Desktop/repos/diploma/.clangd
 badd +10 ~/Desktop/repos/diploma/inc/parser/parser.hpp
-badd +14 ~/Desktop/repos/diploma/inc/model/population.hpp
+badd +12 ~/Desktop/repos/diploma/inc/model/population.hpp
 badd +9 ~/Desktop/repos/diploma/inc/model/model.hpp
-badd +26 ~/Desktop/repos/diploma/src/model/model.cpp
 badd +19 ~/Desktop/repos/diploma/src/parser/parser.cpp
-badd +12 ~/Desktop/repos/diploma/inc/types.hpp
+badd +18 ~/Desktop/repos/diploma/inc/types.hpp
 badd +1 ~/Desktop/repos/diploma/inc/core/icrossover.hpp
 badd +9 ~/Desktop/repos/diploma/inc/core/ifitness.hpp
 badd +2 ~/Desktop/repos/diploma/diploma.pro
-badd +10 ~/Desktop/repos/diploma/src/main.cpp
+badd +9 ~/Desktop/repos/diploma/src/main.cpp
 badd +1 ~/Desktop/repos/diploma/test/core/CMakeLists.txt
 badd +3 ~/Desktop/repos/diploma/test/model/test_model.cpp
-badd +14 ~/Desktop/repos/diploma/inc/model/cell.hpp
-badd +14 ~/Desktop/repos/diploma/inc/model/chromosome.hpp
+badd +8 ~/Desktop/repos/diploma/inc/model/cell.hpp
+badd +16 ~/Desktop/repos/diploma/inc/model/chromosome.hpp
 badd +1 ~/Desktop/repos/diploma/CMakeLists.txt
-badd +6 ~/Desktop/repos/diploma/src/model/population.cpp
+badd +28 ~/Desktop/repos/diploma/src/model/population.cpp
 badd +13 ~/Desktop/repos/diploma/inc/core/fitness_manhattan.hpp
+badd +12 ~/Desktop/repos/diploma/inc/core/editor/editor.hpp
+badd +11 ~/Desktop/repos/diploma/src/core/editor/editor.cpp
+badd +7 ~/Desktop/repos/diploma/inc/core/crossover/crossover_two_point.hpp
+badd +8 ~/Desktop/repos/diploma/inc/core/crossover/icrossover.hpp
+badd +12 ~/Desktop/repos/diploma/inc/core/fitness/fitness_manhattan.hpp
+badd +9 ~/Desktop/repos/diploma/inc/core/fitness/ifitness.hpp
+badd +12 src/core/fitness/fitness_manhattan.cpp
+badd +6 ~/Desktop/repos/diploma/src/core/crossover/crossover_two_point.cpp
+badd +49 ~/Desktop/repos/diploma/src/model/chromosome.cpp
+badd +17 src/model/cell.cpp
 argglobal
 %argdel
-edit ~/Desktop/repos/diploma/src/model/model.cpp
+edit src/core/fitness/fitness_manhattan.cpp
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -49,7 +57,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Desktop/repos/diploma/inc/model/population.hpp
+balt ~/Desktop/repos/diploma/inc/model/cell.hpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -60,12 +68,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((25 * winheight(0) + 16) / 33)
+let s:l = 12 - ((11 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 014|
+keepjumps 12
+normal! 032|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

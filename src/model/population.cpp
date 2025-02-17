@@ -26,3 +26,8 @@ void model::Population::print() const {
     }
 }
 
+const std::vector<model::Chromosome>& model::Population::get_chromosomes() const
+{
+    return m_chroms;
+};
+
