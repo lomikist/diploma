@@ -32,4 +32,8 @@ bool model::Cell::operator==(const Cell& rhs) const
 {
     return (m_name == rhs.m_name && m_width == rhs.m_width && m_height == rhs.m_height);
 }
+bool model::Cell::operator!=(const Cell& rhs) const
+{
+    return !(*this == rhs);
+};
 

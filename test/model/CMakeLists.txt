@@ -1,12 +1,13 @@
-add_executable(test_model
-  test_model.cpp
-  ../../src/model/model.cpp
-  ../../src/model/cell.cpp
-  ../../src/model/chromosome.cpp
-  ../../src/model/population.cpp
-)
+file(GLOB TEST_SOURCES *.cpp)
 
-target_include_directories(test_model PRIVATE ../../inc)
+foreach(TEST_FILE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
 
-add_test(NAME ModelTests COMMAND test_model)
+    add_executable(${TEST_NAME} ${TEST_FILE} ${TEST_DEPENDENCIES})
+
+    target_link_libraries(${TEST_NAME} diploma_lib)    
+    target_include_directories(${TEST_NAME} PRIVATE ../../inc)
+
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endforeach()
 

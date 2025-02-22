@@ -1,10 +1,11 @@
 #pragma once
 #include "chromosome.hpp"
+#include "types.hpp"
 namespace core 
 {
 class Icrossover
 {
 public:
-    virtual model::Chromosome crossover(const model::Chromosome&, const model::Chromosome&) = 0;
+    virtual tp::ChromosomePtr crossover(const tp::ChromosomePtr&, const tp::ChromosomePtr&) = 0 ;
 };
 }

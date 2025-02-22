@@ -1,11 +1,12 @@
 #include "fitness_manhattan.hpp"
+#include "types.hpp"
 #include <cstddef>
 
-int core::FitnessManhattan::calc_fitness(const tp::Graph& graph, const model::Chromosome& matrix)
+int core::FitnessManhattan::calc_fitness(const tp::Graph& graph, const tp::ChromosomePtr& matrix)
 {
     int result = 0;
     std::unordered_map<std::string, const model::Cell*> cell_map;
-    for (const auto& cell : matrix.get_cells()) {
+    for (const auto& cell : matrix->get_cells()) {
         cell_map[cell.get_name()] = &cell;
     }
 
@@ -13,14 +14,12 @@ int core::FitnessManhattan::calc_fitness(const tp::Graph& graph, const model::Ch
     {
         auto first = cell_map.find(node_name);
         if (first == cell_map.end()) {
-            std::cout << "node not found\n";
             continue;
         }
         for (const auto& [neighbor_name, weight] : neighbors)
         {
             auto second = cell_map.find(neighbor_name);
             if (second == cell_map.end()) {
-                std::cout << "node not found\n";
                 continue;
             }
             result += distance(*first->second, *second->second) * weight;

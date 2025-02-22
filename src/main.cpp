@@ -1,15 +1,13 @@
+#include "app.hpp"
 #include "editor.hpp"
 #include "model.hpp"
 #include <fstream>
 #include "parser.hpp"
 
-int main() {
+int main()
+{
     std::ifstream file("../data/graph_6.txt");
-    cli::Parser parser; 
-    core::Editor editor;   
-
-    model::Model model(parser.parseGraph(file));
-    editor.evaluate(model.get_adj_graph(), model.get_population());
-    /*model.get_population().print();*/
+    core::App::instance().start(file);
+    file.close();
     return 0;
 }

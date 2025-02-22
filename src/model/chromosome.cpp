@@ -1,5 +1,6 @@
 #include "chromosome.hpp"
 #include "types.hpp"
+#include <algorithm>
 #include <random>
 #include <string>
 #include <utility>

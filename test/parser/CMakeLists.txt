@@ -1,9 +1,14 @@
-add_executable(test_parser
-  test_parser.cpp
-  ../../src/parser/parser.cpp
-)
+file(GLOB TEST_SOURCES *.cpp)
 
-target_include_directories(test_parser PRIVATE ../../inc)
+foreach(TEST_FILE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
 
-add_test(NAME ParserTests COMMAND test_parser)
+
+    add_executable(${TEST_NAME} ${TEST_FILE} ${TEST_DEPENDENCIES})
+
+    target_include_directories(${TEST_NAME} PRIVATE ../../inc)
+    target_link_libraries(${TEST_NAME} diploma_lib)    
+
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endforeach()
 

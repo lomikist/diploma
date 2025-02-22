@@ -13,37 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/Desktop/repos/diploma/src/view/view.cpp
-badd +9 ~/Desktop/repos/diploma/.clangd
-badd +10 ~/Desktop/repos/diploma/inc/parser/parser.hpp
-badd +12 ~/Desktop/repos/diploma/inc/model/population.hpp
-badd +9 ~/Desktop/repos/diploma/inc/model/model.hpp
-badd +19 ~/Desktop/repos/diploma/src/parser/parser.cpp
-badd +18 ~/Desktop/repos/diploma/inc/types.hpp
-badd +1 ~/Desktop/repos/diploma/inc/core/icrossover.hpp
-badd +9 ~/Desktop/repos/diploma/inc/core/ifitness.hpp
-badd +2 ~/Desktop/repos/diploma/diploma.pro
+badd +13 ~/Desktop/repos/diploma/inc/types.hpp
 badd +9 ~/Desktop/repos/diploma/src/main.cpp
-badd +1 ~/Desktop/repos/diploma/test/core/CMakeLists.txt
-badd +3 ~/Desktop/repos/diploma/test/model/test_model.cpp
-badd +8 ~/Desktop/repos/diploma/inc/model/cell.hpp
-badd +16 ~/Desktop/repos/diploma/inc/model/chromosome.hpp
-badd +1 ~/Desktop/repos/diploma/CMakeLists.txt
-badd +28 ~/Desktop/repos/diploma/src/model/population.cpp
-badd +13 ~/Desktop/repos/diploma/inc/core/fitness_manhattan.hpp
-badd +12 ~/Desktop/repos/diploma/inc/core/editor/editor.hpp
-badd +11 ~/Desktop/repos/diploma/src/core/editor/editor.cpp
-badd +7 ~/Desktop/repos/diploma/inc/core/crossover/crossover_two_point.hpp
-badd +8 ~/Desktop/repos/diploma/inc/core/crossover/icrossover.hpp
-badd +12 ~/Desktop/repos/diploma/inc/core/fitness/fitness_manhattan.hpp
+badd +16 inc/core/editor/editor.hpp
+badd +52 src/core/editor/editor.cpp
+badd +10 inc/core/crossover/crossover_two_point.hpp
+badd +9 inc/core/crossover/icrossover.hpp
+badd +13 ~/Desktop/repos/diploma/inc/core/fitness/fitness_manhattan.hpp
 badd +9 ~/Desktop/repos/diploma/inc/core/fitness/ifitness.hpp
-badd +12 src/core/fitness/fitness_manhattan.cpp
-badd +6 ~/Desktop/repos/diploma/src/core/crossover/crossover_two_point.cpp
-badd +49 ~/Desktop/repos/diploma/src/model/chromosome.cpp
-badd +17 src/model/cell.cpp
+badd +16 src/core/crossover/crossover_two_point.cpp
+badd +48 term://~/Desktop/repos/diploma//48464:/usr/bin/fish
+badd +33 ~/Desktop/repos/diploma/data/graph_6.txt
 argglobal
 %argdel
-edit src/core/fitness/fitness_manhattan.cpp
+edit src/core/editor/editor.cpp
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -57,7 +40,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Desktop/repos/diploma/inc/model/cell.hpp
+balt inc/core/editor/editor.hpp
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -65,15 +48,15 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 16) / 33)
+let s:l = 19 - ((3 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
-normal! 032|
+keepjumps 19
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

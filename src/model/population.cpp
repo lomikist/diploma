@@ -1,7 +1,6 @@
 #include "population.hpp"
-#include "fitness_manhattan.hpp"
+#include "chromosome.hpp"
 #include "types.hpp"
-#include <memory>
 
 model::Population::Population(const tp::Graph& graph, int pop_size, int width, int height)
 {
@@ -9,24 +8,26 @@ model::Population::Population(const tp::Graph& graph, int pop_size, int width, i
     graph_members.reserve(graph.size());
     m_chroms.reserve(pop_size);
 
-    for(auto&& elem : graph)
-    {
+    for(auto&& elem : graph) {
         graph_members.push_back(elem.first);
     }
     for (int i = 0; i < pop_size; ++i) {
-        m_chroms.emplace_back(graph_members, width, height);
+        m_chroms.emplace_back(std::make_shared<Chromosome>(graph_members, width, height));
     }
 };
+
+void model::Population::init_pop()
+{}
 
 void model::Population::print() const {
     std::cout << "Population:\n";
     for (size_t i = 0; i < m_chroms.size(); ++i) {
         std::cout << "Chromosome " << i + 1 << ":\n";
-        m_chroms[i].print();
+        m_chroms[i]->print();
     }
 }
 
-const std::vector<model::Chromosome>& model::Population::get_chromosomes() const
+const std::vector<std::shared_ptr<model::Chromosome>>& model::Population::get_chromosomes() const
 {
     return m_chroms;
 };

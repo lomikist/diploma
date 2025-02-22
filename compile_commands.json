@@ -1,0 +1,212 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/model/cell.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/model/cell.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/model/cell.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/model/cell.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/model/chromosome.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/model/chromosome.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/model/chromosome.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/model/chromosome.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/model/model.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/model/model.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/model/model.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/model/model.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/model/population.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/model/population.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/model/population.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/model/population.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/parser/parser.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/parser/parser.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/parser/parser.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/parser/parser.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/core/app.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/core/app.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/core/app.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/core/app.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/core/crossover/crossover_two_point.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/core/crossover/crossover_two_point.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/core/crossover/crossover_two_point.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/core/crossover/crossover_two_point.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/core/editor/editor.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/core/editor/editor.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/core/editor/editor.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/core/editor/editor.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma_lib.dir/src/core/fitness/fitness_manhattan.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/core/fitness/fitness_manhattan.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/core/fitness/fitness_manhattan.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma_lib.dir/src/core/fitness/fitness_manhattan.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/weasel/Desktop/repos/diploma/inc",
+      "-I/home/weasel/Desktop/repos/diploma/inc/parser",
+      "-I/home/weasel/Desktop/repos/diploma/inc/model",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/editor",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/select",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/fitness",
+      "-I/home/weasel/Desktop/repos/diploma/inc/core/crossover",
+      "-g",
+      "-c",
+      "-o",
+      "CMakeFiles/diploma.dir/src/main.cpp.o",
+      "/home/weasel/Desktop/repos/diploma/src/main.cpp"
+    ],
+    "directory": "/home/weasel/Desktop/repos/diploma/build",
+    "file": "/home/weasel/Desktop/repos/diploma/src/main.cpp",
+    "output": "/home/weasel/Desktop/repos/diploma/build/CMakeFiles/diploma.dir/src/main.cpp.o"
+  }
+]

@@ -27,6 +27,7 @@ bool check_graph(const tp::Graph& graph1, const tp::Graph& graph2) {
     }
     return true;
 }
+
 void printGraph(const tp::Graph& g)
 {
     for (const auto& [node, edges] : g) {
@@ -98,12 +99,12 @@ int main()
         {"J", {{"A", 14}, {"B", 12}, {"C", 13}, {"D", 15}, {"E", 16}, {"F", 36}, {"G", 43}, {"H", 45}, {"I", 46}}}
     };
 
-    std::ifstream input_graph1("../../data/graph_1.txt");
-    std::ifstream input_graph2("../../data/graph_2.txt");
-    std::ifstream input_graph3("../../data/graph_3.txt");
-    std::ifstream input_graph4("../../data/graph_4.txt");
-    std::ifstream input_graph5("../../data/graph_5.txt");
-    std::ifstream input_graph6("../../data/graph_6.txt");
+    std::ifstream input_graph1("../../../data/graph_1.txt");
+    std::ifstream input_graph2("../../../data/graph_2.txt");
+    std::ifstream input_graph3("../../../data/graph_3.txt");
+    std::ifstream input_graph4("../../../data/graph_4.txt");
+    std::ifstream input_graph5("../../../data/graph_5.txt");
+    std::ifstream input_graph6("../../../data/graph_6.txt");
     
     if (!input_graph1) throw std::runtime_error("Failed to open graph_1.txt");
     if (!input_graph2) throw std::runtime_error("Failed to open graph_2.txt");
@@ -118,5 +119,6 @@ int main()
     assert(test_parseGraph(input_graph4, graph4));
     assert(test_parseGraph(input_graph5, graph5));
     assert(test_parseGraph(input_graph6, graph6));
+    return 0;
 }
 

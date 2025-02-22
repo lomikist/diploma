@@ -11,6 +11,7 @@ public:
     Chromosome(std::vector<Cell> cells, int width, int height);
     Chromosome() = default;
     const std::vector<Cell>& get_cells() const;
+    /*std::vector<Cell> get_cells();*/
     void print() const;
 private:
     std::vector<Cell> m_cells;

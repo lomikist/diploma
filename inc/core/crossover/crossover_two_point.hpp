@@ -1,12 +1,12 @@
 #pragma once
-#include "chromosome.hpp"
 #include "icrossover.hpp"
+#include "types.hpp"
 
 namespace core
 {
 class CrossoverTwoPoint : public Icrossover
 {
 public:
-    model::Chromosome crossover(const model::Chromosome&, const model::Chromosome&) override;
+    tp::ChromosomePtr crossover(const tp::ChromosomePtr&, const tp::ChromosomePtr&) override;
 };
 }

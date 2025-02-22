@@ -2,11 +2,13 @@
 #include "chromosome.hpp"
 #include "fitness_manhattan.hpp"
 #include "types.hpp"
+#include <cassert>
 
 int main()
 {
     const int width = 7;
     const int height = 7;
+
     std::vector<model::Cell> cells = {
         model::Cell("A", 10, 10, 0, 5),
         model::Cell("B", 10, 10, 5, 3),
@@ -14,7 +16,9 @@ int main()
         model::Cell("D", 10, 10, 2, 2),
         model::Cell("E", 10, 10, 5, 6)
     };
-    const model::Chromosome matrix(cells, width, height);
+
+    tp::ChromosomePtr matrix= std::make_shared<model::Chromosome>(cells, width, height);
+
     const tp::Graph graph4 = {
         {"A", {{"B", 14}, {"C", 23}, {"D", 22}, {"E", 36}}},
         {"B", {{"A", 14}, {"C", 13}, {"D", 34}, {"E", 33}}},
