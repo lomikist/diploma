@@ -3,6 +3,12 @@
 model::Cell::Cell(const std::string& name, int width, int height, int x, int y)
         : m_name(name), m_width(width), m_height(height), m_x(x), m_y(y) {}
 
+void model::Cell::set_position(std::pair<int, int> pos)
+{
+    this->m_x = pos.first;
+    this->m_y = pos.second;
+}
+
 void model::Cell::set_position(int x, int y)
 {
     this->m_x = x;

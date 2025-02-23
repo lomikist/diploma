@@ -22,12 +22,10 @@ public:
     std::shared_ptr<core::Editor>       get_editor();
 
     void start(std::istream& );
-    /*std::shared_ptr<core::Logger>       get_logger();*/
 private:
     std::shared_ptr<model::Model>       m_model;
     std::shared_ptr<cli::Parser>        m_parser;
     std::shared_ptr<core::Editor>       m_editor;
 
-    /*std::shared_ptr<Logger>     _logger;*/
 };
 }

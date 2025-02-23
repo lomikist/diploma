@@ -1,8 +1,5 @@
 #include "app.hpp"
-#include "editor.hpp"
-#include "model.hpp"
 #include <fstream>
-#include "parser.hpp"
 
 int main()
 {

@@ -11,5 +11,6 @@ public:
                                             std::shared_ptr<Icrossover>,  
                                             tp::Graph, 
                                             tp::VectorPairChromPtr) = 0;
+    virtual ~Iselect() = default;
 };
 }

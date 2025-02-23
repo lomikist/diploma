@@ -1,4 +1,6 @@
 #include "parser.hpp"
+#include <algorithm>
+#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <istream>

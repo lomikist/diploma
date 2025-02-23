@@ -6,5 +6,7 @@ class Ifitness
 {
 public:
     virtual int calc_fitness(const tp::Graph& graph, const tp::ChromosomePtr& matrix) = 0; 
+
+    virtual ~Ifitness() = default;
 };
 }

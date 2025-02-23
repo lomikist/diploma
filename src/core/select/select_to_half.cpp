@@ -8,6 +8,7 @@ tp::VectorPairChromPtr core::SelectToHalf::evaluate(
     tp::VectorPairChromPtr fitness_vals)
 {
     std::sort(fitness_vals.begin(), fitness_vals.end(), [&](auto&& one,auto&& two){ return one.second < two.second; });
+
     for (
         int i = 0,
         j = fitness_vals.size() / 2,
@@ -28,6 +29,7 @@ tp::VectorPairChromPtr core::SelectToHalf::evaluate(
                             fitness->calc_fitness(graph, second_temp) / 2 
         };
     }
+
     std::sort(fitness_vals.begin(), fitness_vals.end(), [&](auto&& one,auto&& two){ return one.second < two.second; });
     return fitness_vals;
 }

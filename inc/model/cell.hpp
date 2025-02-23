@@ -10,10 +10,12 @@ public:
     Cell(const std::string& name, int width, int height, int x, int y);
     Cell() = default;
 
+    std::pair<int, int> get_position() const;
+    std::pair<int, int> get_size() const;
+    const std::string&  get_name() const;
+
     void set_position(int x, int y); 
-    std::pair<int,int> get_position() const;
-    std::pair<int,int> get_size() const;
-    const std::string& get_name() const;
+    void set_position(std::pair<int, int>); 
     bool operator==(const Cell& rhs) const;
     bool operator!=(const Cell& rhs) const;
 
