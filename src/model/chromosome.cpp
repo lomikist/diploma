@@ -19,8 +19,8 @@ model::Chromosome::Chromosome(std::vector<std::string> cells, int width, int hei
         );
         while (std::find(m_used_pos.begin(), m_used_pos.end(), pos) != m_used_pos.end())
         {
-            pos.first = core::Utilities::get_random_number(0, width);
-            pos.second = core::Utilities::get_random_number(0, height);
+            pos.first = core::Utilities::get_random_number(0, width - 1);
+            pos.second = core::Utilities::get_random_number(0, height - 1);
         }
         m_used_pos.emplace_back(pos); 
         m_cells.emplace_back(el, tp::CELL_WIDTH, tp::CELL_HEIGHT, pos.first, pos.second); 
@@ -63,11 +63,29 @@ void model::Chromosome::set_cells(std::vector<Cell> cells)
     m_cells = std::move(cells);
 }
 
-void model::Chromosome::print() const
+void model::Chromosome::print()
 {
-    std::cout << "Chromosome:\n";
+    std::vector<std::vector<char>> grid(tp::CHROMOSOME_HEIGHT + 1,
+                                        std::vector<char>(tp::CHROMOSOME_WIDTH + 1, '0'));
+    
     for (const auto& cell : m_cells) {
-        cell.print();
+        auto [x, y] = cell.get_position();
+        grid[y][x] = cell.get_name()[0];
     }
-    std::cout << "----------------------\n";
+    
+    for (const auto& row : grid) {
+        for (char cell : row) {
+            std::cout << cell << ' ';
+        }
+        std::cout << '\n';
+    }
 }
+/**/
+/*void model::Chromosome::print() const*/
+/*{*/
+/*    std::cout << "Chromosome:\n";*/
+/*    for (const auto& cell : m_cells) {*/
+/*        cell.print();*/
+/*    }*/
+/*    std::cout << "----------------------\n";*/
+/*}*/

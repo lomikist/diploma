@@ -3,15 +3,18 @@
 #include "model.hpp"
 #include "parser.hpp"
 #include <memory>
+#include <qapplication.h>
 
 namespace core
 {
-class App
+class App : public QApplication 
 {
 public:
     static App& instance();
-    App();
+
+    App(int &argc, char *argv[]);
     ~App();
+
     App(const App&) = delete;
     App(App&&) = delete;
     App& operator=(const App&) = delete;

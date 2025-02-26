@@ -1,6 +1,7 @@
 #include "population.hpp"
 #include "chromosome.hpp"
 #include "types.hpp"
+#include <stdexcept>
 
 model::Population::Population(const tp::Graph& graph, int pop_size, int width, int height)
 {
@@ -16,9 +17,6 @@ model::Population::Population(const tp::Graph& graph, int pop_size, int width, i
     }
 };
 
-void model::Population::init_pop()
-{}
-
 void model::Population::print() const {
     std::cout << "Population:\n";
     for (size_t i = 0; i < m_chroms.size(); ++i) {
@@ -27,8 +25,23 @@ void model::Population::print() const {
     }
 }
 
-const std::vector<std::shared_ptr<model::Chromosome>>& model::Population::get_chromosomes() const
+const std::vector<tp::ChromosomePtr>& model::Population::get_chromosomes() const
 {
     return m_chroms;
 };
+
+const tp::ChromosomePtr& model::Population::get_chromosome(int index) const
+{
+    return m_chroms.at(index);
+};
+
+void model::Population::set_chromosome(int index, const tp::ChromosomePtr& chrom)
+{
+    m_chroms.at(index) = chrom; 
+}
+
+void model::Population::set_chromosomes(const std::vector<tp::ChromosomePtr>& chroms)
+{
+    m_chroms = chroms; 
+}
 

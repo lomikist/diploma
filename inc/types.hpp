@@ -9,12 +9,12 @@
 namespace tp
 {
 
-constexpr int POPULATION_SIZE   = 200;
+constexpr int POPULATION_SIZE   = 100;
 constexpr int CELL_WIDTH        = 20;
 constexpr int CELL_HEIGHT       = 20;
 constexpr int CHROMOSOME_WIDTH  = 10;
 constexpr int CHROMOSOME_HEIGHT = 10;
-constexpr int GENERATION_SIZE   = 20; 
+constexpr int GENERATION_SIZE   = 100; 
 
 using Graph                 = std::unordered_map<std::string, std::vector<std::pair<std::string, int>>>;
 using Matrix                = std::vector<std::vector<std::string>>;

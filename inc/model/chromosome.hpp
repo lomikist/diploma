@@ -17,7 +17,7 @@ public:
 
     void set_cells(std::vector<Cell> cells);
     void set_cell(int index, Cell cell);
-    void print() const;
+    void print();
 private:
 
     std::vector<Cell>                m_cells;
