@@ -1,7 +1,6 @@
 #include "population.hpp"
 #include "chromosome.hpp"
 #include "types.hpp"
-#include <stdexcept>
 
 model::Population::Population(const tp::Graph& graph, int pop_size, int width, int height)
 {
@@ -13,35 +12,47 @@ model::Population::Population(const tp::Graph& graph, int pop_size, int width, i
         graph_members.push_back(elem.first);
     }
     for (int i = 0; i < pop_size; ++i) {
-        m_chroms.emplace_back(std::make_shared<Chromosome>(graph_members, width, height));
+        m_chroms.emplace_back(std::make_shared<Chromosome>(graph_members, width, height), 0);
     }
 };
 
-void model::Population::print() const {
+void model::Population::print() const
+{
     std::cout << "Population:\n";
-    for (size_t i = 0; i < m_chroms.size(); ++i) {
+    for (size_t i = 0; i < m_chroms.size(); ++i)
+    {
         std::cout << "Chromosome " << i + 1 << ":\n";
-        m_chroms[i]->print();
+        m_chroms[i].first->print();
     }
 }
 
-const std::vector<tp::ChromosomePtr>& model::Population::get_chromosomes() const
+const tp::VectorPairChromPtr& model::Population::get_chromosomes() const
 {
     return m_chroms;
 };
 
-const tp::ChromosomePtr& model::Population::get_chromosome(int index) const
+const std::pair<tp::ChromosomePtr, int>& model::Population::get_chromosome(int index) const
 {
     return m_chroms.at(index);
 };
 
-void model::Population::set_chromosome(int index, const tp::ChromosomePtr& chrom)
+void model::Population::set_chromosome(int index, const tp::ChromosomePtr& chrom, int fitness_val)
 {
-    m_chroms.at(index) = chrom; 
+    m_chroms[index] = {chrom, fitness_val};
 }
 
-void model::Population::set_chromosomes(const std::vector<tp::ChromosomePtr>& chroms)
+void model::Population::set_chromosome(int index, const tp::ChromosomePtr& chrom)
+{
+    m_chroms[index].first = chrom;
+};
+
+void model::Population::set_fitness(int index, int fitness_val)
+{
+    m_chroms[index].second = fitness_val;
+};
+
+void model::Population::set_chromosomes(const tp::VectorPairChromPtr& chroms)
 {
     m_chroms = chroms; 
-}
+};
 

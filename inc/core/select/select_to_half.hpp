@@ -8,10 +8,10 @@ namespace core
 class SelectToHalf : public core::Iselect
 {
 public:
-    virtual tp::VectorPairChromPtr evaluate(std::shared_ptr<Ifitness>, 
-                                            std::shared_ptr<Icrossover>,  
-                                            tp::Graph, 
-                                            tp::VectorPairChromPtr) override;
+    virtual tp::VectorPairChromPtr cross_select(    std::shared_ptr<Ifitness>, 
+                                                    std::shared_ptr<Icrossover>,  
+                                                    const tp::Graph&,
+                                                    tp::VectorPairChromPtr) override;
 private:
 };
 }

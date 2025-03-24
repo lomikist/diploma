@@ -3,21 +3,23 @@
 #include "ifitness.hpp"
 #include "model.hpp"
 #include "imutate.hpp"
+#include "isubject.hpp"
 #include "population.hpp"
 #include "iselect.hpp"
 #include "types.hpp"
-#include <unordered_map>
 
 namespace core 
 {
-class Editor 
+class Controller : public ISubject
 {
 public:
-    Editor(std::shared_ptr<model::Model> model);
+    Controller(std::shared_ptr<model::Model> model = nullptr);
     void evaluate(const tp::Graph& graph, const model::Population& pop);
-
+    void notify_observers() override;
+    void add_observer(std::shared_ptr<IObserver> new_observer) override; 
+    void set_model(std::shared_ptr<model::Model> model);
+ 
 private:
-    tp::VectorPairChromPtr              m_fitness_vals; 
     std::shared_ptr<model::Model>       m_model;
     std::shared_ptr<core::Ifitness>     m_fitness;
     std::shared_ptr<core::Icrossover>   m_crossover;

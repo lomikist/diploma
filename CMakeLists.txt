@@ -20,10 +20,20 @@ file(GLOB CORE_SOURCES
     src/core/fitness/*.cpp 
     src/core/mutate/*.cpp 
     src/core/select/*.cpp 
+    src/core/observer/*.cpp 
+    src/core/vizualize/*.cpp 
     src/gui/*.cpp 
 )
 
+qt6_wrap_cpp(MOC_SOURCES   
+    inc/gui/main_window.hpp
+    inc/gui/paint_area.hpp
+    inc/gui/file_selector.hpp
+    inc/gui/gui_controller.hpp
+)
+
 add_library(diploma_lib STATIC
+    ${MOC_SOURCES}
     ${MODEL_SOURCES}
     ${PARSER_SOURCES}
     ${CORE_SOURCES}
@@ -39,6 +49,8 @@ target_include_directories(diploma_lib PUBLIC
     inc/core/fitness
     inc/core/mutate
     inc/core/select
+    inc/core/observer
+    inc/core/vizualize
     inc/gui
 )
 

@@ -7,6 +7,6 @@ namespace core
 class MutateRandom : public Imutate
 {
 public:
-    void mutate(const tp::VectorPairChromPtr& vals);
+    tp::VectorPairChromPtr mutate(tp::VectorPairChromPtr vals);
 };
 }

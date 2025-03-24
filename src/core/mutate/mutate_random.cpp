@@ -2,19 +2,17 @@
 #include "utilities.hpp"
 #include <algorithm>
 
-
-void core::MutateRandom::mutate(const tp::VectorPairChromPtr& vals)
+tp::VectorPairChromPtr core::MutateRandom::mutate(tp::VectorPairChromPtr vals)
 {
     for (const auto& [chromptr, fitness] : vals) 
     {
-        auto& used_positions = chromptr->get_positions();
+        const auto& used_positions = chromptr->get_positions();
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 1; ++i)
         {
             int index = core::Utilities::get_random_number(0, chromptr->get_cells().size() / 2);
             std::pair<int, int> pos;
             model::Cell temp_cell = chromptr->get_cell(index); 
-
             do {
                 pos.first = core::Utilities::get_random_number(0, tp::CHROMOSOME_WIDTH - 1); 
                 pos.second = core::Utilities::get_random_number(0, tp::CHROMOSOME_HEIGHT - 1);
@@ -23,6 +21,8 @@ void core::MutateRandom::mutate(const tp::VectorPairChromPtr& vals)
             }));
             temp_cell.set_position(pos);
             chromptr->set_cell(index, temp_cell);
+            //TODO update used positions 
         }
     }
+    return vals;
 }

@@ -1,5 +1,6 @@
 #pragma once
-#include "editor.hpp"
+#include "controller.hpp"
+#include "gui_controller.hpp"
 #include "model.hpp"
 #include "parser.hpp"
 #include <memory>
@@ -10,7 +11,7 @@ namespace core
 class App : public QApplication 
 {
 public:
-    static App& instance();
+    static App* instance();
 
     App(int &argc, char *argv[]);
     ~App();
@@ -22,13 +23,14 @@ public:
 
     std::shared_ptr<cli::Parser>        get_parser();
     std::shared_ptr<model::Model>       get_model();
-    std::shared_ptr<core::Editor>       get_editor();
+    std::shared_ptr<core::Controller>   get_editor();
 
-    void start(std::istream& );
+    void start();
 private:
     std::shared_ptr<model::Model>       m_model;
     std::shared_ptr<cli::Parser>        m_parser;
-    std::shared_ptr<core::Editor>       m_editor;
+    std::shared_ptr<core::Controller>   m_editor;
+    std::shared_ptr<gui::GuiController> m_gui;
 
 };
 }

@@ -7,9 +7,9 @@ namespace core {
 class Iselect 
 {
 public:
-    virtual tp::VectorPairChromPtr evaluate(std::shared_ptr<Ifitness>, 
+    virtual tp::VectorPairChromPtr cross_select(std::shared_ptr<Ifitness>, 
                                             std::shared_ptr<Icrossover>,  
-                                            tp::Graph, 
+                                            const tp::Graph&, 
                                             tp::VectorPairChromPtr) = 0;
     virtual ~Iselect() = default;
 };

@@ -1,38 +1,52 @@
 #include "app.hpp"
-#include "editor.hpp"
-#include "types.hpp"
+#include <fstream>
 #include <istream>
+#include <qapplication.h>
 
-core::App::App(int &argc, char *argv[]) 
-                : QApplication(argc, argv)
+
+core::App* core::App::instance()
 {
-
-    /*_parser         = std::make_unique<cli::Parser>();*/
-    /*_model          = std::make_shared<model::Model>();*/
-    /*_gui_controller = std::make_shared<gui::GuiController>();*/
-    /*_editor         = std::make_shared<core::Editor>();*/
-    /*_logger         = std::make_shared<core::Logger>();*/
-    /*_vizualizer     = std::make_shared<core::Vizualizer>();*/
-    /**/
-    /*_editor->set_model(_model);*/
-    /*_vizualizer->set_model(_model);*/
-    /**/
-    /*_editor->addObserver(_gui_controller);*/
-    /**/
-    /*_logger->add_logger(std::make_shared<OsLogger>(&std::cout));*/
-    /*_logger->add_logger(std::make_shared<GuiLogger>(_gui_controller->get_screen()->get_text_browser()));*/
-    m_parser = std::make_shared<cli::Parser>();
+    return static_cast<App*>(QApplication::instance());
 }
 
-void core::App::start(std::istream& stream)//TODO or controller which would be handle
+core::App::App(int &argc, char *argv[])
+            : QApplication(argc, argv)
 {
-    m_model = std::make_shared<model::Model>(m_parser->parseGraph(stream));
-    m_editor = std::make_shared<core::Editor>(m_model);
+    m_parser    = std::make_shared<cli::Parser>();
+    m_gui       = std::make_shared<gui::GuiController>();
+    m_editor    = std::make_shared<core::Controller>(m_model);
+    m_editor->add_observer(m_gui);
+}
 
-    m_model->get_population().get_chromosome(tp::POPULATION_SIZE - 1)->print();
+/*void core::App::start(std::istream& stream)*/
+/*{*/
+/*    m_model = std::make_shared<model::Model>(m_parser->parseGraph(stream));*/
+/**/
+/*    //////////////////////////*/
+/*    m_model->get_population().get_chromosome(0).first->print();*/
+/*    m_editor->evaluate(m_model->get_adj_graph(), m_model->get_population());*/
+/*    std::cout << "\n";*/
+/*    m_model->get_population().get_chromosome(0).first->print();*/
+/**/
+/*}*/
+
+void core::App::start()
+{
+    auto path = m_gui->get_main_window()->get_file_selector()->get_file_path().toStdString();
+    std::ifstream file(path);
+
+    m_model = std::make_shared<model::Model>(m_parser->parseGraph(file));
+    //log
+    m_model->get_population().get_chromosome(0).first->print();
+    //logend
+
+    m_editor->set_model(m_model);
     m_editor->evaluate(m_model->get_adj_graph(), m_model->get_population());
-    std::cout << "\n";
-    m_model->get_population().get_chromosome(0)->print();
+
+    //log
+    m_model->get_population().get_chromosome(0).first->print();
+    //logend
+
 }
 
 core::App::~App()
@@ -48,10 +62,8 @@ std::shared_ptr<model::Model>   core::App::get_model()
     return m_model;
 }
 
-std::shared_ptr<core::Editor>   core::App::get_editor()
+std::shared_ptr<core::Controller>   core::App::get_editor()
 {
     return m_editor;
 }
-
-/* std::shared_ptr<core::Logger>       get_logger(); */
 

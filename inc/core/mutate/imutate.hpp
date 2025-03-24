@@ -6,7 +6,7 @@ namespace core
 class Imutate
 {
 public:
-    virtual void mutate(const tp::VectorPairChromPtr& vals) = 0;
+    virtual tp::VectorPairChromPtr mutate(tp::VectorPairChromPtr vals) = 0;
     virtual ~Imutate() = default;
 };
 }
