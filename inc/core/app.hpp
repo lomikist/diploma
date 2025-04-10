@@ -21,9 +21,10 @@ public:
     App& operator=(const App&) = delete;
     App& operator=(App&&) = delete;
 
-    std::shared_ptr<cli::Parser>        get_parser();
-    std::shared_ptr<model::Model>       get_model();
-    std::shared_ptr<core::Controller>   get_editor();
+    std::shared_ptr<cli::Parser>        get_parser() const;
+    std::shared_ptr<model::Model>       get_model() const;
+    std::shared_ptr<core::Controller>   get_editor() const;
+    std::shared_ptr<gui::GuiController> get_gui_controller() const;
 
     void start();
 private:

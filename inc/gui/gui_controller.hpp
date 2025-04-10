@@ -5,10 +5,10 @@
 #include <memory>
 namespace gui 
 {
-const int PAREA_HEIGHT      = 800;
-const int PAREA_WIDTH       = 800;
-/*const int BTN_ICONE_HEIGHT  = 100;*/
-/*const int BTN_ICONE_WIDTH   = 100;*/
+constexpr int PAREA_HEIGHT = 900;
+constexpr int PAREA_WIDTH = 900;
+constexpr int MARGINE = 20;
+constexpr int CELL_SPACE = 5; 
 
 class GuiController : public QObject, public core::IObserver
 {
@@ -17,8 +17,19 @@ public:
     GuiController();
     void update() override;
     void setup_connections();
-    std::shared_ptr<gui::MainWindow> get_main_window();
+    std::shared_ptr<gui::MainWindow> get_main_window() const;
 private:
+    void draw_cells(int screenWidth, 
+                    int screenHeight, 
+                    int chromosomeWidth,  
+                    int chromosomeHeight
+    );
+    void draw_grid( int screenWidth,
+                    int screenHeight, 
+                    int chromosomeWidth,
+                    int chromosomeHeight,
+                    tp::RGB gridLineColor = {0, 214, 211}
+    );
     std::shared_ptr<gui::MainWindow> m_screen = nullptr;
     std::shared_ptr<core::ICanvas> m_canvas = nullptr;
 };

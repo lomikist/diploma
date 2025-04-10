@@ -1,4 +1,5 @@
 #include "app.hpp"
+#include "gui_controller.hpp"
 #include <fstream>
 #include <istream>
 #include <qapplication.h>
@@ -18,52 +19,34 @@ core::App::App(int &argc, char *argv[])
     m_editor->add_observer(m_gui);
 }
 
-/*void core::App::start(std::istream& stream)*/
-/*{*/
-/*    m_model = std::make_shared<model::Model>(m_parser->parseGraph(stream));*/
-/**/
-/*    //////////////////////////*/
-/*    m_model->get_population().get_chromosome(0).first->print();*/
-/*    m_editor->evaluate(m_model->get_adj_graph(), m_model->get_population());*/
-/*    std::cout << "\n";*/
-/*    m_model->get_population().get_chromosome(0).first->print();*/
-/**/
-/*}*/
-
 void core::App::start()
 {
     auto path = m_gui->get_main_window()->get_file_selector()->get_file_path().toStdString();
     std::ifstream file(path);
 
     m_model = std::make_shared<model::Model>(m_parser->parseGraph(file));
-    //log
-    m_model->get_population().get_chromosome(0).first->print();
-    //logend
-
     m_editor->set_model(m_model);
     m_editor->evaluate(m_model->get_adj_graph(), m_model->get_population());
-
-    //log
-    m_model->get_population().get_chromosome(0).first->print();
-    //logend
-
 }
 
 core::App::~App()
 {}
 
-std::shared_ptr<cli::Parser>    core::App::get_parser()
+std::shared_ptr<cli::Parser>    core::App::get_parser() const
 {
     return m_parser;
 }
 
-std::shared_ptr<model::Model>   core::App::get_model()
+std::shared_ptr<model::Model>   core::App::get_model() const
 {
     return m_model;
 }
 
-std::shared_ptr<core::Controller>   core::App::get_editor()
+std::shared_ptr<core::Controller>   core::App::get_editor() const
 {
     return m_editor;
 }
-
+std::shared_ptr<gui::GuiController>  core::App::get_gui_controller() const
+{
+    return m_gui;
+}

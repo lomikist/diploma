@@ -9,7 +9,7 @@ tp::VectorPairChromPtr core::SelectToHalf::cross_select(
 {
     for(auto& [chrom, val] : fitness_vals)
         val = fitness->calc_fitness(graph, chrom) / 2;
-
+//TODO check this function , position related.
     std::sort(fitness_vals.begin(), fitness_vals.end(), [&](auto&& one,auto&& two){ return one.second < two.second; });
     for (
         int i = 0,

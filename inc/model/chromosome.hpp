@@ -1,5 +1,6 @@
 #pragma once 
 #include "cell.hpp"
+#include <set>
 #include <vector>
 
 namespace model 
@@ -13,15 +14,16 @@ public:
     
     const std::vector<Cell>&                get_cells() const;
     const model::Cell&                      get_cell(int) const;
-    const std::vector<std::pair<int, int>>& get_positions() const;
+    const std::set<std::pair<int, int>>&    get_used_positions() const;
 
+    void erase_from_used_position(std::pair<int, int> pos_to_remove);
     void set_cells(std::vector<Cell> cells);
     void set_cell(int index, Cell cell);
     void print();
 private:
 
-    std::vector<Cell>                m_cells;
-    std::vector<std::pair<int, int>> m_used_pos;
+    std::vector<Cell>               m_cells;
+    std::set<std::pair<int, int>>   m_used_pos;
     int m_width;
     int m_height;
 };

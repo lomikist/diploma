@@ -6,7 +6,7 @@ namespace model
 class Population
 {
 public:
-    Population(const tp::Graph& graph, int pop_size, int width, int height);
+    Population(const tp::Graph& graph, int pop_size, int pop_width, int pop_height);
     const tp::VectorPairChromPtr&               get_chromosomes() const;
     const std::pair<tp::ChromosomePtr, int>&    get_chromosome(int index) const;
 

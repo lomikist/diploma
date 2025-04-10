@@ -16,7 +16,8 @@ private slots:
     void select_file();
 
 private:
-    QLineEdit *filePathEdit;
+    QPushButton *m_button;
+    QLineEdit   *m_path_edit;
 };
 
 }

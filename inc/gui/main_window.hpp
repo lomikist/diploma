@@ -1,13 +1,16 @@
 #pragma once
+
 #include "paint_area.hpp"
 #include <QMainWindow>
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <qboxlayout.h>
 #include <qcombobox.h>
+#include <QSpinBox>
 #include <qgraphicsitem.h>
 #include <QTextBrowser>
 #include <QComboBox>
+#include <QGroupBox>
 #include <qpushbutton.h>
 #include "file_selector.hpp"
 
@@ -18,10 +21,13 @@ class MainWindow : public QMainWindow {
 public:
     MainWindow(QWidget* parent = nullptr);
     PaintArea*      get_paint_area() const;
-    QComboBox*      get_box_fitness() const;
-    QComboBox*      get_box_select() const;
-    QComboBox*      get_box_mutate() const;
-    QComboBox*      get_box_crossover() const;
+
+    QComboBox*      get_combobox_fitness() const;
+    QComboBox*      get_combobox_select() const;
+    QComboBox*      get_combobox_crossover() const;
+    QSpinBox*       get_spinbox_mutate() const;
+    QSpinBox*       get_spinbox_generation() const;
+
     QHBoxLayout*    get_main_layout() const;
     QVBoxLayout*    get_tools_layout() const;
     QVBoxLayout*    get_parea_layout() const;
@@ -33,10 +39,16 @@ private:
     void setup_widgets();
 
     PaintArea*      m_paint_area;
-    QComboBox*      m_box_fitness;
-    QComboBox*      m_box_select;
-    QComboBox*      m_box_mutate;
-    QComboBox*      m_box_crossover;
+    QComboBox*      m_combobox_fitness;
+    QComboBox*      m_combobox_select;
+    QComboBox*      m_combobox_crossover;
+    QSpinBox*       m_spinbox_mutate;
+    QSpinBox*       m_spinbox_generation;
+
+    QGroupBox*      m_group_fitness;
+    QGroupBox*      m_group_select;
+    QGroupBox*      m_group_crossover;
+    QGroupBox*      m_group_mutate;
 
     QHBoxLayout*    m_main_layout;
     QVBoxLayout*    m_tools_layout;
