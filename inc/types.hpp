@@ -23,8 +23,8 @@ constexpr int POPULATION_SIZE   = 100;
 constexpr int CELL_WIDTH        = 5;
 constexpr int CELL_HEIGHT       = 5;
 
-constexpr int CHROMOSOME_WIDTH  = 100; //800 / (5 * 10) // 5 is a cell width,  800 is a window size
-constexpr int CHROMOSOME_HEIGHT = 100;
+constexpr int CHROMOSOME_WIDTH  = 20; //800 / (5 * 10) // 5 is a cell width,  800 is a window size
+constexpr int CHROMOSOME_HEIGHT = 20;
 constexpr int GENERATION_SIZE   = 20; 
 
 using Graph                 = std::unordered_map<std::string, std::vector<std::pair<std::string, int>>>;
@@ -32,4 +32,5 @@ using Matrix                = std::vector<std::vector<std::string>>;
 using Gene                  = std::pair<int, int>;
 using ChromosomePtr         = std::shared_ptr<model::Chromosome>;
 using VectorPairChromPtr    = std::vector<std::pair<ChromosomePtr, int>>;
+
 }
