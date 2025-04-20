@@ -1,6 +1,4 @@
-#ifndef GUILOGGER_HPP
-#define GUILOGGER_HPP 
-
+#pragma once
 #include "ilogger.hpp"
 #include "qtextbrowser.h"
 #include <string>
@@ -14,7 +12,6 @@ public:
     ~GuiLogger();
     void write(const std::string& message) override;
 private:
-    QTextBrowser* _device = nullptr; 
+    QTextBrowser* m_device = nullptr; 
 };
 }
-#endif // !GUILOGGER_HPP

@@ -1,5 +1,4 @@
-#ifndef OSLOGGER_HPP
-#define OSLOGGER_HPP 
+#pragma once
 
 #include "ilogger.hpp"
 #include <ostream>
@@ -13,7 +12,6 @@ public:
     ~OsLogger();
     void write(const std::string& log) override;
 private:
-    std::ostream* _device = nullptr;
+    std::ostream* m_device = nullptr;
 };
 }
-#endif // !OSLOGGER_HPP

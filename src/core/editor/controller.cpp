@@ -50,7 +50,6 @@ void core::Controller::evaluate(const tp::Graph& graph, const model::Population&
     auto pop_size       = main_window->get_spinbox_generation()->value();
     model::Population population = pop; 
 
-
     for (int i = 0; i < pop_size; ++i)
     {
         population.set_chromosomes(m_select->cross_select(m_fitness, m_crossover, graph, population.get_chromosomes()));
@@ -58,6 +57,10 @@ void core::Controller::evaluate(const tp::Graph& graph, const model::Population&
 
         m_model->set_population(population);
         notify_observers();
+        core::App::instance()->get_logger()->notify_loggers(
+            "Fitness cost - " + std::to_string(population.get_chromosome(0).second)
+        );
+
         QApplication::processEvents();
     }
 }

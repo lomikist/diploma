@@ -1,5 +1,4 @@
-#ifndef LOGGER_HPP 
-#define LOGGER_HPP 
+#pragma once
 
 #include "ilogger.hpp"
 #include <memory>
@@ -15,8 +14,6 @@ public:
     void add_logger(std::shared_ptr<ILogger> new_one);
     void notify_loggers(const std::string& message);
 private:
-    std::vector<std::shared_ptr<ILogger>> _loggers;
+    std::vector<std::shared_ptr<ILogger>> m_loggers;
 };
 }
-
-#endif // !LOGGER_HPP 

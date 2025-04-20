@@ -1,5 +1,7 @@
 #include "app.hpp"
 #include "gui_controller.hpp"
+#include "logger/guilogger.hpp"
+#include "logger/oslogger.hpp"
 #include <fstream>
 #include <istream>
 #include <qapplication.h>
@@ -16,6 +18,11 @@ core::App::App(int &argc, char *argv[])
     m_parser    = std::make_shared<cli::Parser>();
     m_gui       = std::make_shared<gui::GuiController>();
     m_editor    = std::make_shared<core::Controller>(m_model);
+    m_logger    = std::make_shared<core::Logger>();
+
+    m_logger->add_logger(std::make_shared<core::OsLogger>(&std::cout));
+    m_logger->add_logger(std::make_shared<core::GuiLogger>(m_gui->get_main_window()->get_text_browser()));
+
     m_editor->add_observer(m_gui);
 }
 
@@ -50,3 +57,8 @@ std::shared_ptr<gui::GuiController>  core::App::get_gui_controller() const
 {
     return m_gui;
 }
+
+std::shared_ptr<core::Logger>   core::App::get_logger()
+{  
+    return m_logger;
+};

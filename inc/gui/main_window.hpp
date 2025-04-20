@@ -12,6 +12,7 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <qpushbutton.h>
+#include <qtextbrowser.h>
 #include "file_selector.hpp"
 
 namespace gui
@@ -27,6 +28,7 @@ public:
     QComboBox*      get_combobox_crossover() const;
     QSpinBox*       get_spinbox_mutate() const;
     QSpinBox*       get_spinbox_generation() const;
+    QTextBrowser*   get_text_browser() const;
 
     QHBoxLayout*    get_main_layout() const;
     QVBoxLayout*    get_tools_layout() const;
@@ -39,6 +41,7 @@ private:
     void setup_widgets();
 
     PaintArea*      m_paint_area;
+    QTextBrowser*   m_cmd_browser;
     QComboBox*      m_combobox_fitness;
     QComboBox*      m_combobox_select;
     QComboBox*      m_combobox_crossover;

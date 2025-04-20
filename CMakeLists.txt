@@ -22,6 +22,7 @@ file(GLOB CORE_SOURCES
     src/core/select/*.cpp 
     src/core/observer/*.cpp 
     src/core/vizualize/*.cpp 
+    src/core/logger/*.cpp 
     src/gui/*.cpp 
 )
 
@@ -51,6 +52,7 @@ target_include_directories(diploma_lib PUBLIC
     inc/core/select
     inc/core/observer
     inc/core/vizualize
+    inc/core/logger
     inc/gui
 )
 
