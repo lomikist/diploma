@@ -14,6 +14,7 @@ public:
     
     const std::vector<Cell>&                get_cells() const;
     const model::Cell&                      get_cell(int) const;
+    const model::Cell&                      get_cell_by_pos(const std::pair<int, int>& pos) const;
     const std::set<std::pair<int, int>>&    get_used_positions() const;
 
     void erase_from_used_position(std::pair<int, int> pos_to_remove);

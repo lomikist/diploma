@@ -3,6 +3,7 @@
 #include <qobject.h>
 #include <qimage.h>
 #include <qpixmap.h>
+#include <QMouseEvent>
  
 gui::PaintArea::PaintArea(QWidget* parent) :
                     QWidget(parent),
@@ -32,6 +33,22 @@ void gui::PaintArea::paintEvent(QPaintEvent* event)
 
     painter.drawImage(0, 0, m_image);
     painter.end();
+}
+
+void gui::PaintArea::mousePressEvent(QMouseEvent* event)
+{
+    QPoint clickPos = event->pos();
+    clickPos.setX(clickPos.x() - m_image_position.x());
+    clickPos.setY(clickPos.y() - m_image_position.y());
+    if (clickPos.x() > m_image.width()){
+        clickPos.setX(-1);
+        clickPos.setY(-1);
+    }
+    if (clickPos.y() > m_image.height()){
+        clickPos.setX(-1);
+        clickPos.setY(-1);
+    }
+    emit clicked(clickPos);
 }
 
 std::shared_ptr<QPainter> gui::PaintArea::get_painter()

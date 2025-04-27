@@ -26,3 +26,17 @@ const model::Population& model::Model::get_population() const
     return m_population;
 };
 
+int model::Model::get_weight(const std::string& key, const std::string& to_search)
+{
+    auto it = m_adj_graph.find(key);
+    if (it == m_adj_graph.end()){
+        return -1;
+    }
+
+    for (const auto& neighbor : it->second)
+    {
+        if (neighbor.first == to_search)
+            return neighbor.second;
+    }
+    return -1;
+}

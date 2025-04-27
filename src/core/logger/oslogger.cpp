@@ -16,6 +16,5 @@ OsLogger::~OsLogger()
 
 void OsLogger::write(const std::string& log)
 {
-    *m_device << log << "\n";
-    m_device->flush();
+    *m_device << log << std::endl;
 }

@@ -46,6 +46,17 @@ const std::set<std::pair<int, int>>& model::Chromosome::get_used_positions() con
     return m_used_pos;
 };
 
+const model::Cell& model::Chromosome::get_cell_by_pos(const std::pair<int, int>& pos) const
+{
+    for (auto&& cell : m_cells)
+    {
+        if (cell.get_position() == pos)
+            return cell;
+    }
+    // TODO it should not return 0
+    return m_cells[0];
+};
+
 void model::Chromosome::set_cell(int index, Cell cell)
 {
     m_used_pos.erase(m_cells[index].get_position());

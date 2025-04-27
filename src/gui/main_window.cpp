@@ -90,7 +90,6 @@ void gui::MainWindow::setup_widgets()
     m_tools_layout->addWidget(m_group_mutate);
     m_tools_layout->addWidget(m_group_select);
     m_tools_layout->addWidget(m_btn_start);
-    // m_tools_layout->addWidget(m_cmd_browser);
     m_tools_layout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
     m_parea_layout->addWidget(m_paint_area);

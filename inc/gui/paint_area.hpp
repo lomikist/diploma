@@ -16,13 +16,17 @@ public:
     PaintArea(QWidget* parent = nullptr);
     std::shared_ptr<QPainter> get_painter();
     void clear();
+
 protected:
+
     QImage                      m_image;
     std::shared_ptr<QPainter>   m_painter;
     QPoint                      m_image_position;
     double                      m_image_scale = 1.0;
 
+    void mousePressEvent(QMouseEvent* event) override;
     void paintEvent(QPaintEvent* event) override;
-
+signals:
+    void clicked(QPoint position);
 };
 }

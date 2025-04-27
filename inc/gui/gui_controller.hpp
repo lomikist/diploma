@@ -30,8 +30,16 @@ private:
                     int chromosomeHeight,
                     tp::RGB gridLineColor = {0, 214, 211}
     );
+
+    void draw_weight_line();
+
+    void on_canvas_clicked(QPoint pos);
     std::shared_ptr<gui::MainWindow> m_screen = nullptr;
     std::shared_ptr<core::ICanvas> m_canvas = nullptr;
+
+    // vizualization
+    int m_selectedRow = -1;
+    int m_selectedCol = -1;
 };
 }
 
