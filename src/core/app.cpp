@@ -36,6 +36,11 @@ void core::App::start()
     m_editor->evaluate(m_model->get_adj_graph(), m_model->get_population());
 }
 
+void core::App::output()
+{
+    m_parser->generate_output(m_model->get_population().get_chromosome(0).first);
+};
+
 core::App::~App()
 {}
 

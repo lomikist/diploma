@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <istream>
 #include <sstream>
@@ -17,5 +18,29 @@ tp::Graph cli::Parser::parseGraph(std::istream& file) {
         result[node2].emplace_back(node1, weight);
     }
     return result;
+}
+
+void cli::Parser::generate_output(const tp::ChromosomePtr& output_crom)
+{
+    if (!output_crom) {
+        std::cerr << "Error: null ChromosomePtr\n";
+        return;
+    }
+
+    std::ofstream out_file("output.txt");
+    if (!out_file.is_open()) {
+        std::cerr << "Error: could not open output file\n";
+        return;
+    }
+
+    const auto& cells = output_crom->get_cells();
+    // const auto& used_positions = output_crom->get_used_positions();
+
+    for (const auto& cell : cells) {
+        auto pos = cell.get_position();
+        out_file << "(" << pos.first << "," << pos.second << "): " 
+                 << cell.get_name() << "\n";
+    }
+    out_file.close();
 }
 

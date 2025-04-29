@@ -35,6 +35,7 @@ public:
     QVBoxLayout*    get_parea_layout() const;
     QWidget*        get_central_widget() const;
     QPushButton*    get_btn_start() const;
+    QPushButton*    get_btn_output() const;
     FileSelector*   get_file_selector() const;
 private:
     void setup_layout();
@@ -59,6 +60,7 @@ private:
 
     QWidget*        m_central_widget;
     QPushButton*    m_btn_start;
+    QPushButton*    m_btn_output;
     FileSelector*   m_file_selector;
 };
 }

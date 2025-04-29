@@ -109,6 +109,7 @@ void gui::GuiController::draw_grid(
 void gui::GuiController::setup_connections()
 {
     connect(m_screen->get_btn_start(), &QPushButton::clicked, core::App::instance(), &core::App::start);
+    connect(m_screen->get_btn_output(), &QPushButton::clicked, core::App::instance(), &core::App::output);
     connect(m_screen->get_paint_area(), &gui::PaintArea::clicked, this, &gui::GuiController::on_canvas_clicked);
 }
 

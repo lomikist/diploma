@@ -81,6 +81,7 @@ void gui::MainWindow::setup_widgets()
     m_paint_area    = new PaintArea();
     m_cmd_browser   = new QTextBrowser(this);
     m_btn_start     = new QPushButton("Start");
+    m_btn_output    = new QPushButton("Generate output");
     m_file_selector = new FileSelector();
     m_cmd_browser->setFixedHeight(100);
 
@@ -89,6 +90,7 @@ void gui::MainWindow::setup_widgets()
     m_tools_layout->addWidget(m_group_crossover);
     m_tools_layout->addWidget(m_group_mutate);
     m_tools_layout->addWidget(m_group_select);
+    m_tools_layout->addWidget(m_btn_output);
     m_tools_layout->addWidget(m_btn_start);
     m_tools_layout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
@@ -115,6 +117,8 @@ QVBoxLayout* gui::MainWindow::get_parea_layout() const { return m_parea_layout; 
 QWidget* gui::MainWindow::get_central_widget() const { return m_central_widget; }
 
 QPushButton* gui::MainWindow::get_btn_start() const { return m_btn_start; }
+
+QPushButton* gui::MainWindow::get_btn_output() const { return m_btn_output; }
 
 gui::PaintArea* gui::MainWindow::get_paint_area() const { return m_paint_area; }
 

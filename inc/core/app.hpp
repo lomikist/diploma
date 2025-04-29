@@ -29,6 +29,9 @@ public:
     std::shared_ptr<core::Logger>       get_logger();
 
     void start();
+
+    //TODO change this function postion
+    void output();
 private:
     std::shared_ptr<model::Model>       m_model;
     std::shared_ptr<cli::Parser>        m_parser;
