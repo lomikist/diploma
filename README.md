@@ -1,6 +1,6 @@
 FPGA placement using genetic algorithm.
 ---
-For correct working you need download boost json, also yosys library on your project foldr like this 
+For correct working you need download boost json, also yosys library on your project foldr like this, also at least qt6 
 ```
   project_folder/third_party/yosys
 ```
