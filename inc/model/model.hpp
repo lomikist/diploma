@@ -8,8 +8,10 @@ class Model
 {
 public:
     Model(const tp::Graph&);
+    Model();
 
     const model::Population&    get_population() const;
+    model::Population& get_population();
     const tp::Graph&            get_adj_graph() const;
     void set_population(const model::Population& pop);
     void set_adj_graph(const tp::Graph&);

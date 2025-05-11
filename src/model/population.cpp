@@ -4,6 +4,11 @@
 
 model::Population::Population(const tp::Graph& graph, int pop_size, int width, int height)
 {
+    initialize(graph, pop_size, width, height);
+};
+
+void model::Population::initialize(const tp::Graph& graph, int pop_size, int width, int height)
+{
     std::vector<std::string> graph_members;
     graph_members.reserve(graph.size());
     m_chroms.reserve(pop_size);
@@ -15,6 +20,9 @@ model::Population::Population(const tp::Graph& graph, int pop_size, int width, i
         m_chroms.emplace_back(std::make_shared<Chromosome>(graph_members, width, height), 0);
     }
 };
+
+
+model::Population::Population(){}
 
 void model::Population::print() const
 {

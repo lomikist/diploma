@@ -25,7 +25,8 @@ void gui::GuiController::update()
     m_screen->get_paint_area()->clear();
     draw_grid(PAREA_WIDTH, PAREA_HEIGHT, tp::CHROMOSOME_WIDTH, tp::CHROMOSOME_HEIGHT);
     draw_cells(PAREA_WIDTH, PAREA_HEIGHT, tp::CHROMOSOME_WIDTH, tp::CHROMOSOME_HEIGHT);
-    draw_weight_line();
+    if (m_selectedCol > -1 && m_selectedRow > -1) 
+        draw_weight_line();
     m_screen->get_paint_area()->update();
 }
 
@@ -142,11 +143,10 @@ void gui::GuiController::on_canvas_clicked( QPoint pos )
             flag = true;
         }
     }
-    if (!flag){
+    if (!flag) {
         m_selectedCol = initial_x;
         m_selectedRow = initial_y;
     }
-    
     update();
 }
 
@@ -174,7 +174,7 @@ void gui::GuiController::draw_weight_line()
                     (pos.first + 1) * (gui::CELL_SPACE + cellWidth),
                     (pos.second + 1)* (gui::CELL_SPACE + cellHeight),
                     (m_selectedCol + 1) * (gui::CELL_SPACE + cellWidth),
-                    (m_selectedRow + 1)* (gui::CELL_SPACE + cellHeight),
+                    (m_selectedRow + 1) * (gui::CELL_SPACE + cellHeight),
                     {255,0,0}, 
                     {255,0,0}
             );

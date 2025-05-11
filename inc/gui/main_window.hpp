@@ -25,6 +25,7 @@ public:
 
     QComboBox*      get_combobox_fitness() const;
     QComboBox*      get_combobox_select() const;
+    QComboBox*      get_combobox_parser() const;
     QComboBox*      get_combobox_crossover() const;
     QSpinBox*       get_spinbox_mutate() const;
     QSpinBox*       get_spinbox_generation() const;
@@ -46,6 +47,7 @@ private:
     QComboBox*      m_combobox_fitness;
     QComboBox*      m_combobox_select;
     QComboBox*      m_combobox_crossover;
+    QComboBox*      m_combobox_parser;
     QSpinBox*       m_spinbox_mutate;
     QSpinBox*       m_spinbox_generation;
 
@@ -53,6 +55,7 @@ private:
     QGroupBox*      m_group_select;
     QGroupBox*      m_group_crossover;
     QGroupBox*      m_group_mutate;
+    QGroupBox*      m_group_parser;
 
     QHBoxLayout*    m_main_layout;
     QVBoxLayout*    m_tools_layout;

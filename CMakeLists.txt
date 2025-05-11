@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Boost REQUIRED COMPONENTS json)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -56,11 +57,11 @@ target_include_directories(diploma_lib PUBLIC
     inc/gui
 )
 
-target_link_libraries(diploma_lib PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
+target_link_libraries(diploma_lib PRIVATE Boost::json Qt6::Core Qt6::Gui Qt6::Widgets)
 
 add_executable(diploma src/main.cpp)
 
-target_link_libraries(diploma PRIVATE diploma_lib Qt6::Core Qt6::Gui Qt6::Widgets)
+target_link_libraries(diploma PRIVATE Boost::json diploma_lib Qt6::Core Qt6::Gui Qt6::Widgets)
 
 enable_testing()
 

@@ -27,6 +27,7 @@ gui::MainWindow::MainWindow(QWidget *parent)
 
     setup_layout(); 
     setup_widgets();
+
 }
 
 void gui::MainWindow::setup_layout()
@@ -47,26 +48,30 @@ void gui::MainWindow::setup_widgets()
     m_group_fitness     = new QGroupBox("Fitness Function");
     m_group_select      = new QGroupBox("Selecting Strategy");
     m_group_crossover   = new QGroupBox("Crossover Type");
+    m_group_parser      = new QGroupBox("Parse Type");
 
     m_combobox_fitness      = new QComboBox();
     m_combobox_select       = new QComboBox();
     m_combobox_crossover    = new QComboBox();
     m_spinbox_mutate        = new QSpinBox();
     m_spinbox_generation    = new QSpinBox();
+    m_combobox_parser       = new QComboBox();
 
     m_combobox_fitness->addItems({"Wire Length", "Congestion", "Hybrid"});
     m_combobox_select->addItems({"To Half"});
     m_combobox_crossover->addItems({"One Point", "Two Point", "Uniform"});
-
+    m_combobox_parser->addItems({"verilog (HDL)", "Simple"});
     
     QVBoxLayout* crossover_layout   = new QVBoxLayout(m_group_crossover);
     QVBoxLayout* select_layout      = new QVBoxLayout(m_group_select);
     QVBoxLayout* fitness_layout     = new QVBoxLayout(m_group_fitness);
     QVBoxLayout* mutation_layout    = new QVBoxLayout(m_group_mutate);
+    QVBoxLayout* parser_layout      = new QVBoxLayout(m_group_parser);
 
     crossover_layout->addWidget(m_combobox_crossover);
     select_layout->addWidget(m_combobox_select);
     fitness_layout->addWidget(m_combobox_fitness);
+    parser_layout->addWidget(m_combobox_parser);
 
     mutation_layout->addWidget(new QLabel("Mutation Rate (%)):"), 0);
     m_spinbox_mutate->setRange(1, 40);
@@ -87,6 +92,7 @@ void gui::MainWindow::setup_widgets()
 
     m_tools_layout->addWidget(m_file_selector);
     m_tools_layout->addWidget(m_group_fitness);
+    m_tools_layout->addWidget(m_group_parser);
     m_tools_layout->addWidget(m_group_crossover);
     m_tools_layout->addWidget(m_group_mutate);
     m_tools_layout->addWidget(m_group_select);
@@ -101,6 +107,8 @@ void gui::MainWindow::setup_widgets()
 QComboBox* gui::MainWindow::get_combobox_fitness() const { return m_combobox_fitness; }
 
 QComboBox* gui::MainWindow::get_combobox_select() const { return m_combobox_select; }
+
+QComboBox* gui::MainWindow::get_combobox_parser() const { return m_combobox_parser; }
 
 QSpinBox* gui::MainWindow::get_spinbox_mutate() const { return m_spinbox_mutate; }
 
